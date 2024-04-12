@@ -52,9 +52,9 @@ def user_report(team_mapping):
 
 # Streamlit App
 def main():
-    st.title("Cricket Match Predictor")
+    st.title("Cricket Match Winning Prediction")
 
-    st.image('logos/ipl.png', width=300)
+    st.image('logos/ipl.png', width=300) 
 
     # Generate user report
     batting_team_value, bowling_team_value, batting_team_logo, bowling_team_logo = user_report(team_mapping)
@@ -63,15 +63,12 @@ def main():
     if batting_team_value is not None and bowling_team_value is not None:
         col1,col2,col3 = st.columns(3)
         with col1:
-            st.write("""<h3>Batting Team</h3>""",unsafe_allow_html=True)
+            st.write("""<h3 style="text-align:center;">Batting Team</h3>""",unsafe_allow_html=True)
             st.image(batting_team_logo, width=100)
 
         with col3:
-            st.write("""<h3>Bowling Team</h3>""",unsafe_allow_html=True)
+            st.write("""<h3 style="text-align:center;">Bowling Team</h3>""",unsafe_allow_html=True)
             st.image(bowling_team_logo, width=100)
-
-
-
 
         # Display input features table with logos
         st.subheader("Input Features")
@@ -100,11 +97,11 @@ def main():
             # Display prediction
             if prediction == 1:
                 with col2:
-                    st.write("""<h3>Winning Team</h3>""",unsafe_allow_html=True)
+                    st.write("""<h3 style="text-align:center;">Winning Team</h3>""",unsafe_allow_html=True)
                     st.image(batting_team_logo, width=100)           
             else:
                 with col2:
-                    st.write("""<h3>Winning Team</h3>""",unsafe_allow_html=True)
+                    st.write("""<h3 style="text-align:center;">Winner</h3>""",unsafe_allow_html=True)
                     st.image(bowling_team_logo, width=100)
 
 if __name__ == "__main__":
