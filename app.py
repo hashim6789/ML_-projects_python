@@ -19,7 +19,7 @@ team_mapping = {
     'Kochi Tuskers Kerala': {'value': 11, 'logo': 'logos/kochi.png'}
 }
 
-# Load the trained Random Forest model
+# Load the trained Random Forest model``
 with open('random_forest_model.sav', 'rb') as file:
     model = pickle.load(file)
 
